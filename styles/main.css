@@ -10,12 +10,15 @@ body {
      background-repeat: no-repeat, no-repeat;
      font-family: 'Kumbh Sans', sans-serif;
      background: hsl(185, 75%, 39%);
+     flex-direction: column;
      justify-content: center;
      align-items: center;
      min-height: 100vh;
+     overflow: hidden;
      display: flex;
      width: 100%;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
      color: hsl(229, 23%, 23%);
@@ -25,9 +28,26 @@ p {
      color: hsl(0, 0%, 59%);
 }
 
+body .bg-image {
+     z-index: -1;
+     user-select: none;
+     position: absolute;
+     transform: translate(-50%, -50%)
+}
+
+body .bg-image.top-bg-image {
+     top: 0;
+     left: 0;
+}
+
+body .bg-image.bottom-bg-image {
+     right: -70%;
+     bottom: -120%;
+ }
+
 .profile-card {
      width: 90%;
-     max-width: 400px;
+     max-width: 350px;
      overflow: hidden;
      text-align: center;
      margin: 100px auto;
@@ -44,31 +64,47 @@ p {
 .profile-card .profile-header img {
      object-fit: cover;
      border-radius: 50%;
+     background:#ffffff;
      transform: translateY(50%);
      border: 5px solid #ffffff;
 }
 
-.profile-card .profile-body {
-     padding: 53px;
+.profile-card .profile-body .profile-owner {
+     padding: 70px 0 30px 0;
+     border-bottom: 1px solid rgba(150, 150, 150, 0.4);
 }
 
 .profile-card .profile-body .profile-owner h1 {
      font-size: 18px;
      margin-bottom: 15px;
-     color: hsl(229, 23%, 23%)
+     color: #2d3248
 }
 
 .profile-card .profile-body .profile-owner h1 span {
      font-weight: 400;
-     color: hsl(0, 0%, 59%)
+     color: #969696
 }
 
 .profile-card .profile-body .profile-details {
+     padding: 53px;
      display: flex;
      align-items: center;
      justify-content:space-between;
 }
 
+.profile-card .profile-body .profile-details .detail h6 {
+     font-size: 18px;
+     margin-bottom: 10px;
+}
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.profile-card .profile-body .profile-details .detail p {
+     font-size: 15px;
+}
+
+.attribution p { 
+     color: #ffffff;
+     text-align: center; 
+}
+.attribution a { 
+     color: #ffffff;
+}
